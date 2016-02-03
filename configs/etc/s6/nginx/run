@@ -1,0 +1,16 @@
+#!/bin/bash
+
+NGINX_LOG=/data/var/log/nginx
+NGINX_CONFD=/data/etc/nginx/conf.d
+
+if [ ! -d ${NGINX_LOG} ]; then
+    mkdir -p ${NGINX_LOG}
+fi
+
+if [ ! -d ${NGINX_CONFD} ]; then
+    mkdir -p ${NGINX_CONFD}
+fi
+
+/opt/setup.sh
+
+/usr/sbin/nginx -c /etc/nginx/nginx.conf 
