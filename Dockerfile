@@ -1,16 +1,10 @@
-FROM debian:jessie
-MAINTAINER Christophe Burki, christophe@burkionline.net
-
-# Install system requirements
-RUN apt-get update && apt-get install -y \
-    apache2-utils \
-    locales \
-    nginx
+FROM h3nrik/nginx-ldap
+MAINTAINER Raphaël Pinson, raphael.pinson@camptocamp.com
 
 # Configure locales and timezone
-RUN locale-gen en_US.UTF-8 en_GB.UTF-8 fr_CH.UTF-8
-RUN cp /usr/share/zoneinfo/Europe/Zurich /etc/localtime
-RUN echo "Europe/Zurich" > /etc/timezone
+#RUN locale-gen en_US.UTF-8 en_GB.UTF-8 fr_CH.UTF-8
+#RUN cp /usr/share/zoneinfo/Europe/Zurich /etc/localtime
+#RUN echo "Europe/Zurich" > /etc/timezone
 
 # install s6 binaries
 COPY bin /usr/bin/
