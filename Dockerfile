@@ -1,5 +1,5 @@
 FROM debian:jessie
-MAINTAINER Christophe Burki, christophe@burkionline.net
+MAINTAINER Christophe Burki, christophe.burki@gmail.com
 
 # Install system requirements
 RUN apt-get update && apt-get install -y \
