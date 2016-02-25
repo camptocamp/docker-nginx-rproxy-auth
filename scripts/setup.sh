@@ -19,7 +19,7 @@ upstream service {
 
 server {
 
-    listen 80 default_server;
+    listen ${SERVICE_PORT} default_server;
     server_name ${PROXY_SERVER_NAME};
 
     auth_basic "Protected Service";

@@ -39,8 +39,7 @@ Run the image
 
 When you run the image, you will link the service you would like to protect and
 specify the environment variables described above. You will also publish the port
-you want the proxy to listen on but the exposed port must be 80. This is the one
-nginx is listening on inside the container.
+you want the proxy to listen on.
 
     docker run \
         --name nginx-rproxy-auth \
@@ -51,5 +50,5 @@ nginx is listening on inside the container.
         -e PROXY_SERVER_NAME=<server_name> \
         -e SERVICE_ADDRESS=<service_alias> \
         -e SERVICE_PORT=<service_port> \
-        -p <publish_port>:80 \
+        -p <publish_port>:<publish_port> \
         cburki/nginx-rproxy-auth:latest
